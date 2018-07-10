@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Ajax.Utilities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -14,7 +15,26 @@ namespace Vidly.Controllers
         {
             var movie = new Movie() { Name = "Shrek!" };
 
-            return View(movie);
+              return View(movie);
+            // return Content("Hello World!");
+            // return HttpNotFound();
+            //  return new EmptyResult();
+           // return RedirectToAction("Index", "Home", new {page = 1, sortBy = "name" });
+        }
+        
+        public ActionResult Edit(int id)
+        {
+            return Content("id=" + id);
+        }
+        public ActionResult Index(int? pageIndex, string SortBy)
+        {
+            if (pageIndex.HasValue)
+                pageIndex = 1;
+
+            if (string.IsNullOrWhiteSpace(SortBy))
+                SortBy = "Name";
+
+            return Content(string.Format("pageIndex={0}&sortBy={1}", pageIndex, SortBy));
         }
     }
 }
