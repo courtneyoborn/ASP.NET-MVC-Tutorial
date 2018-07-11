@@ -10,10 +10,10 @@ namespace Vidly.Controllers
 {
     public class CustomerController : Controller
     {
-            static List<Customer> customer = new List<Customer>
+        static List<Customer> customer = new List<Customer>
             {
-                new Customer  {Name = "Courtney Oborn" },
-                new Customer  {Name = "Christopher Johnson" }
+                new Customer  {Name = "Courtney Oborn", Id = 1 },
+                new Customer  {Name = "Christopher Johnson", Id = 2 }
             };
 
         RandomMovieViewModel ViewModelListOfCustomers = new RandomMovieViewModel
@@ -24,10 +24,23 @@ namespace Vidly.Controllers
         [Route("Customer/ListOfCustomers")]
         public ActionResult ListOfCustomers()
         {
-          
 
             return View(ViewModelListOfCustomers);
 
+        }
+
+        [Route("Customer/Details/{Id}")]
+        public ActionResult Details(int Id)
+        {
+            Customer customerfound = ViewModelListOfCustomers.Customer.Find(x => x.Id == Id);
+            if (customerfound == null)
+            {
+                return HttpNotFound();
+            }
+            else
+            {
+                return View(customerfound);
+            }
         }
     }
 }
