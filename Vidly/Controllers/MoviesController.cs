@@ -23,18 +23,30 @@ namespace Vidly.Controllers
             Movie = movie,
         };
 
-        [Route("Movies/MovieTitles")]
+        [Route("Movie/MovieTitles")]
 
-        public ActionResult Movies()
+        public ActionResult MovieTitles()
         {
 
               return View(viewModelMovies);
         }
 
-        
-        //public ActionResult MovieTitles()  
-        //{
-        //    return View();
-        //}
+        [Route("Movie/Details/{Id}")]
+
+        public ActionResult Details(int Id)
+        {
+            Movie movieFound = viewModelMovies.Movie.Find(x => x.Id == Id);
+            if(movieFound == null)
+            {
+              return  HttpNotFound();
+            }
+            else
+            {
+                return View(movieFound);
+            }
+            
+        }
+
+
     }
 }

@@ -10,21 +10,23 @@ namespace Vidly.Controllers
 {
     public class CustomerController : Controller
     {
-        public ActionResult Customer()
-        {
-            var customer = new List<Customer>
+            static List<Customer> customer = new List<Customer>
             {
                 new Customer  {Name = "Courtney Oborn" },
                 new Customer  {Name = "Christopher Johnson" }
             };
 
-            var ViewModelCustomer = new RandomMovieViewModel
-            {
-                Customer = customer,
+        RandomMovieViewModel ViewModelListOfCustomers = new RandomMovieViewModel
+        {
+            Customer = customer,
 
-            };
+        };
+        [Route("Customer/ListOfCustomers")]
+        public ActionResult ListOfCustomers()
+        {
+          
 
-            return View(ViewModelCustomer);
+            return View(ViewModelListOfCustomers);
 
         }
     }
