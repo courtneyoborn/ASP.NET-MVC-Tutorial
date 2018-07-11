@@ -25,35 +25,35 @@ namespace Vidly.Controllers
             {
                 Movie = movie,
                 Customer = customer
-            }
+            };
 
            // ViewData["Movie"] = movie; different way to pass data to a view
            // View.Bag.Movie = movie; another way to pass data to a view
-              return View(viewModel);
+              return View(ViewModel);
             // return Content("Hello World!");
             // return HttpNotFound();
             //  return new EmptyResult();
            // return RedirectToAction("Index", "Home", new {page = 1, sortBy = "name" });
         }
         
-        public ActionResult Edit(int id)
-        {
-            return Content("id=" + id);
-        }
-        public ActionResult Index(int? pageIndex, string SortBy)
-        {
-            if (pageIndex.HasValue)
-                pageIndex = 1;
+        //public ActionResult Edit(int id)
+        //{
+        //    return Content("id=" + id);
+        //}
+        //public ActionResult Index(int? pageIndex, string SortBy)
+        //{
+        //    if (pageIndex.HasValue)
+        //        pageIndex = 1;
 
-            if (string.IsNullOrWhiteSpace(SortBy))
-                SortBy = "Name";
+        //    if (string.IsNullOrWhiteSpace(SortBy))
+        //        SortBy = "Name";
 
-            return Content(string.Format("pageIndex={0}&sortBy={1}", pageIndex, SortBy));
-        }
-        [Route("movies/released/{year}/{month:regex(\\d{4}):range(1, 12}")]
-        public ActionResult ByReleaseYear(int year, int month)
-        {
-            return Content(year + "/" + month);
-        }
+        //    return Content(string.Format("pageIndex={0}&sortBy={1}", pageIndex, SortBy));
+        //}
+        //[Route("movies/released/{year}/{month:regex(\\d{4}):range(1, 12}")]
+        //public ActionResult ByReleaseYear(int year, int month)
+        //{
+        //    return Content(year + "/" + month);
+        //}
     }
 }
