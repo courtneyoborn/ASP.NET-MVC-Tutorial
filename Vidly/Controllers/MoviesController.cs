@@ -10,29 +10,31 @@ using Vidly.ViewModels;
 
 namespace Vidly.Controllers
 {
-    public class MoviesandCustomerController : Controller
+    public class MovieController : Controller
     {
-        public ActionResult Random()
+       static List<Movie> movie = new List<Movie>
+            {
+                new Movie  { Name = "Shrek", Id = 1},
+                new Movie  { Name = "Wall-e", Id = 2}
+            };
+
+        RandomMovieViewModel viewModelMovies = new RandomMovieViewModel
         {
-            var movie = new List<Movie>
-            {
-                new Movie  { Name = "Shrek" },
-                new Movie  { Name = "Wall-e"}
-            };
-            var customer = new List<Customer>
-            {
-                new Customer  {Name = "Courtney Oborn" },
-                new Customer  {Name = "Christopher Johnson" }
-            };
+            Movie = movie,
+        };
 
-            var ViewModel = new RandomMovieViewModel
-            {
-                Movie = movie,
-                Customer = customer
-            };
+        [Route("Movies/MovieTitles")]
 
-              return View(ViewModel);
+        public ActionResult Movies()
+        {
+
+              return View(viewModelMovies);
         }
+
         
+        //public ActionResult MovieTitles()  
+        //{
+        //    return View();
+        //}
     }
 }
