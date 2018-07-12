@@ -12,8 +12,8 @@ namespace Vidly.Controllers
     {
         static List<Customer> customer = new List<Customer>
             {
-                new Customer  {Name = "Courtney Oborn", Id = 1 },
-                new Customer  {Name = "Christopher Johnson", Id = 2 }
+                //new Customer  {Name = "Courtney Oborn", Id = 1 },
+                //new Customer  {Name = "Christopher Johnson", Id = 2 }
             };
 
         RandomMovieViewModel ViewModelListOfCustomers = new RandomMovieViewModel
@@ -41,6 +41,7 @@ namespace Vidly.Controllers
             {
                 return View(customerfound);
             }
+       
         }
     }
 }

@@ -5,11 +5,29 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h1>Movies</h1>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
 
-<ul>
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
 
-        <li>@Model.Name</li>
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
 
-</ul>
+<table>
+    <tr>Movie</tr>
+    <tr><td>@Model.Name</td></tr>
+</table>
+
+
 

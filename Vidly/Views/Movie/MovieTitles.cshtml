@@ -4,10 +4,30 @@
     ViewBag.Title = "MovieTitles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<h2>Movie Titles</h2>
-<ul>
+<h1>Movie Titles</h1>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<table class="Movies">
+
+    <th>Movie</th>
     @foreach (var movie in Model.Movie)
-     {
-        <li>@movie.Name</li>
-     }
-</ul>
+    {
+    <tr><td>@Html.ActionLink(movie.Name, "Details", "Movie", new { Id = movie.Id }, null)</td></tr>
+    }
+</table>
+
