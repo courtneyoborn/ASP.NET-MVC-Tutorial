@@ -120,3 +120,5 @@ C:\Users\Courtney Oborn\Documents\ASP.NET(MVC)Tutorial\Vidly\Vidly\obj\Debug\Vid
 C:\Users\Courtney Oborn\Documents\ASP.NET(MVC)Tutorial\Vidly\Vidly\obj\Debug\Vidly.csproj.CopyComplete
 C:\Users\Courtney Oborn\Documents\ASP.NET(MVC)Tutorial\Vidly\Vidly\obj\Debug\Vidly.dll
 C:\Users\Courtney Oborn\Documents\ASP.NET(MVC)Tutorial\Vidly\Vidly\obj\Debug\Vidly.pdb
+C:\Users\Courtney Oborn\Documents\ASP.NET(MVC)Tutorial\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources
+C:\Users\Courtney Oborn\Documents\ASP.NET(MVC)Tutorial\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.cache
